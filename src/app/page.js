@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Head from 'next/head'; 
 
 export default function Home() {
   const router = useRouter();
@@ -11,6 +12,10 @@ export default function Home() {
 
   return (
     <div className="bg-gradient-to-r bg-blue-500 min-h-screen flex flex-col">
+      <Head>
+        <title>Cold Email Generator By Alvin</title>
+      </Head>
+
       <div className="flex flex-col justify-center items-center text-center flex-grow px-4 md:px-0">
         <Image
           src="/logo.png"
@@ -32,7 +37,7 @@ export default function Home() {
           Try It For Free
         </button>
       </div>
-      
+
       <footer className="text-white text-center py-6 mt-auto bg-blue-500 opacity-90">
         <p className="font-medium">
           Made with ❤️‍🔥 by{' '}
