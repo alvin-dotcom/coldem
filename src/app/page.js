@@ -1,22 +1,27 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import Head from 'next/head'; 
+"use client";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Head from "next/head";
+import BlurText from "@/app/BlurText";
+import DecryptedText from "@/app/DecryptedText";
+import StarBorder from "./StarBorder";
 
 export default function Home() {
   const router = useRouter();
 
   const handleNavigate = () => {
-    router.push('/generate');
+    router.push("/generate");
   };
 
   return (
-    <div className="bg-gradient-to-r bg-blue-500 min-h-screen flex flex-col">
+    <div className="bg-black min-h-screen flex flex-col text-white">
       <Head>
         <title>Cold Email Generator By Alvin</title>
       </Head>
 
-      <div className="flex flex-col justify-center items-center text-center flex-grow px-4 md:px-0">
+      {/* Centered Container */}
+      <div className="flex flex-col justify-center items-center text-center flex-grow px-6 sm:px-10">
+        {/* Logo */}
         <Image
           src="/logo.png"
           alt="coldem logo"
@@ -24,28 +29,50 @@ export default function Home() {
           height={60}
           className="object-contain"
         />
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white mt-4 text-shadow-xl">
-          Free Cold Email Generator
+
+        {/* Animated Title */}
+        <h2 className="text-3xl sm:text-5xl font-extrabold mt-6 text-shadow-xl">
+          <BlurText
+            text="Free Cold Email Generator"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-white"
+          />
         </h2>
-        <p className="text-white text-lg sm:text-xl font-semibold md:text-xl mt-2 opacity-90">
-          Create personalized cold emails quickly and effectively with this free AI-powered cold email generator.
+
+        {/* Animated Subtext */}
+        <p className="text-lg sm:text-xl font-semibold opacity-90 mt-6 max-w-[90%] md:max-w-[60%]">
+          <DecryptedText
+            text="Create personalized cold emails quickly and effectively with this free AI-powered cold email generator."
+            animateOn="view"
+            speed={120} // Slower for a smooth reveal
+            revealDirection="right"
+            sequential={true}
+          />
         </p>
-        <button
+
+        {/* CTA Button */}
+        <StarBorder
+          as="button"
+          className="mt-10 px-8 py-4  text-white font-semibold text-lg rounded-lg shadow-lg  transition-transform duration-300"
+          color="white"
+          speed="10s"
           onClick={handleNavigate}
-          className="mt-6 px-8 py-4 bg-gradient-to-r from-pink-400 to-pink-600 text-white font-semibold text-lg rounded-md shadow-xl hover:bg-pink-500 transform hover:scale-105 transition-all duration-300"
         >
           Try It For Free
-        </button>
+        </StarBorder>
       </div>
 
-      <footer className="text-white text-center py-6 mt-auto bg-blue-500 opacity-90">
+      {/* Footer */}
+      <footer className="text-center py-6 mt-auto opacity-90">
         <p className="font-medium">
-          Made with ❤️‍🔥 by{' '}
+          Made with ❤️‍🔥 by{" "}
           <a
             href="https://github.com/alvin-dotcom"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-pink-400 hover:text-pink-500 transition-all"
+            className="text-cyan-400 hover:text-cyan-500 transition-all"
           >
             Alvin
           </a>
