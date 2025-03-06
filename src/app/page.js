@@ -14,24 +14,24 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-black min-h-screen flex flex-col text-white">
+    <div className="bg-black min-h-screen flex flex-col items-center text-white px-4 sm:px-8">
       <Head>
         <title>Cold Email Generator By Alvin</title>
       </Head>
 
-      {/* Centered Container */}
-      <div className="flex flex-col justify-center items-center text-center flex-grow px-6 sm:px-10">
+      {/* Main Content */}
+      <div className="flex flex-col justify-center items-center text-center flex-grow w-full max-w-4xl">
         {/* Logo */}
         <Image
           src="/logo.png"
           alt="coldem logo"
-          width={220}
-          height={60}
+          width={200}
+          height={50}
           className="object-contain"
         />
 
-        {/* Animated Title */}
-        <h2 className="text-3xl sm:text-5xl font-extrabold mt-6 text-shadow-xl">
+        {/* Title */}
+        <h2 className="text-3xl sm:text-5xl font-extrabold mt-6">
           <BlurText
             text="Free Cold Email Generator"
             delay={150}
@@ -41,12 +41,12 @@ export default function Home() {
           />
         </h2>
 
-        {/* Animated Subtext */}
-        <p className="text-lg sm:text-xl font-semibold opacity-90 mt-6 max-w-[90%] md:max-w-[60%]">
+        {/* Description */}
+        <p className="text-lg sm:text-xl font-semibold opacity-90 mt-4 sm:mt-6 max-w-md sm:max-w-lg">
           <DecryptedText
             text="Create personalized cold emails quickly and effectively with this free AI-powered cold email generator."
             animateOn="view"
-            speed={120} // Slower for a smooth reveal
+            speed={120}
             revealDirection="right"
             sequential={true}
           />
@@ -55,7 +55,7 @@ export default function Home() {
         {/* CTA Button */}
         <StarBorder
           as="button"
-          className="mt-10 px-8 py-4  text-white font-semibold text-lg rounded-lg shadow-lg  transition-transform duration-300"
+          className="mt-8 sm:mt-10 px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold text-lg rounded-lg shadow-lg transition-transform duration-300"
           color="white"
           speed="10s"
           onClick={handleNavigate}
@@ -65,7 +65,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="text-center py-6 mt-auto opacity-90">
+      <footer className="text-center py-4 w-full opacity-90 text-sm sm:text-base">
         <p className="font-medium">
           Made with ❤️‍🔥 by{" "}
           <a
